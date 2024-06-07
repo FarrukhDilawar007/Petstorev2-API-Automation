@@ -8,7 +8,6 @@ test('verify response code for GET request to inventory endpoint', async ({ page
             'accept': 'application/json'
         }
     });
-
     // Assert the response code is 200 (OK)
     expect(response.status()).toBe(200);
 });
