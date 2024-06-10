@@ -24,7 +24,7 @@ export default defineConfig({
   reporter: [['html', { outputFolder: 'test-html-results' }]],
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'http://petstore.swagger.io/v2',
+    //baseURL: 'http://petstore.swagger.io/v2',
 
     trace: 'on-first-retry',
   },
