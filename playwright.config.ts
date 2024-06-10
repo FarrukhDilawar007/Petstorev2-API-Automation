@@ -20,8 +20,8 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
-
+  //reporter: 'html',
+  reporter: [['html', { outputFolder: 'test-html-results' }]],
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: 'http://petstore.swagger.io/v2',
