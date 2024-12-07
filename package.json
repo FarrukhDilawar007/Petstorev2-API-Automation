@@ -9,11 +9,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "allure-playwright": "^2.12.2",
     "playwright": "^1.44.1"
   },
   "devDependencies": {
-    "@playwright/test": "^1.41.2",
-    "@types/node": "^20.11.19"
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^20.11.19",
+    "allure-js-commons": "^3.0.7",
+    "allure-playwright": "^3.0.7",
+    "eslint": "^9.16.0",
+    "prettier": "^3.4.2",
+    "ts-node": "^10.9.2"
   }
 }
