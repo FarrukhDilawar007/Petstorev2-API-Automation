@@ -11,21 +11,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: 18
 
+      - uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+
+      - name: Download and Install Allure CLI
+        run: |
+          curl -sSL https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.23.0/allure-commandline-2.23.0.zip -o allure.zip
+          unzip allure.zip
+          export PATH=$PATH:./allure-commandline-2.23.0/bin
+
       - name: Install dependencies
         run: npm install
-
-      - name: Setup Allure CLI
-        uses: allure-framework/allure-action@v2
-        with:
-          allure-version: 2.23.0
 
       - name: Run Playwright Tests
         run: npx playwright test
