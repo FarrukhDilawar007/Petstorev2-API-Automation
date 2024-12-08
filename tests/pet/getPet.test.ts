@@ -19,9 +19,8 @@ test.describe("Get the Pet Details", () => {
         const response = await apiClient.get(request, `${config.baseURL}/pet/` + petId);
         expect(response.ok()).toBeTruthy();
         const responseBody = await response.json();
-        console.log(responseBody);
+        console.log("Pet Details:", JSON.stringify(responseBody, null, 2));
         validatePetResponse(responseBody);
-
     });
 
 })
