@@ -11,24 +11,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout the code
       - uses: actions/checkout@v3
 
+      # Step 2: Setup Node.js
       - uses: actions/setup-node@v3
         with:
           node-version: 18
 
+      # Step 3: Install dependencies (npm install)
       - name: Install dependencies
         run: npm install
 
+      # Step 4: Install Allure Reports (allure-playwright package)
       - name: Install Allure Reports
         run: npm install allure-playwright --save-dev
 
+      # Step 5: Run Playwright Tests
       - name: Run Playwright Tests
         run: npx playwright test
 
+      # Step 6: Generate Allure Report
       - name: Generate Allure Report
-        run: npx allure generate test-results -o allure-report
+        run: npx allure generate allure-results --clean -o allure-report
 
+      # Step 7: Deploy Allure Report to GitHub Pages
       - name: Deploy Allure Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
