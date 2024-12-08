@@ -11,4 +11,9 @@ export const apiClient = {
     const response = await api.post(endpoint, { data });
     return response;
   },
+
+  async put(api: APIRequestContext, endpoint: string, data: object) {
+    const response = await api.put(endpoint, {data});
+    return response;
+  }
 };
