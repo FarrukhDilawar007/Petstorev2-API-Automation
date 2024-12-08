@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tests:api": "npx playwright test --config=playwright.config.ts --project=Chromium"
+    "tests:api": "npx playwright test --config=playwright.config.ts"
   },
   "author": "",
   "license": "ISC",
