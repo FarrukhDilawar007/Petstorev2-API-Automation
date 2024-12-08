@@ -1,6 +1,3 @@
-# Writing the README content into a markdown file
-
-readme_content = """
 # PetStore API Playwright E2E Test Framework
 
 This repository contains an end-to-end (E2E) test framework using [Playwright](https://playwright.dev) for API testing of the PetStore API. The framework includes tests for adding and retrieving pets, along with Allure reporting for test results. The tests are written in TypeScript.
