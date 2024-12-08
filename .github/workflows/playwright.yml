@@ -34,8 +34,13 @@ jobs:
       - name: Run Playwright Tests
         run: npx playwright test
 
+      - name: Set PATH for Allure CLI
+        run: echo "export PATH=$PATH:/path/to/allure/bin" >> $GITHUB_ENV
+
       - name: Generate Allure Report
         run: allure generate test-results -o allure-report
+        env:
+          JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.25-9/x64
 
       - name: Deploy Allure Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
