@@ -27,7 +27,7 @@ jobs:
         run: npx playwright test
 
       - name: Generate Allure Report
-        run: npx /path/to/allure/bin/allure generate test-results -o allure-report
+        run: npx allure generate test-results -o allure-report
 
       - name: Deploy Allure Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
